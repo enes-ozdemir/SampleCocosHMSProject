@@ -4,14 +4,18 @@ const { ccclass, property } = _decorator;
 @ccclass('HuaweiAdsManager')
 export class HuaweiAdsManager extends Component {
     start() {
-        var params = { "adType": "Interstitial", "adID":"testb4znbuh3n2" };
-        sdkhub.getAdsPlugin().preloadAds(params);
-        sdkhub.getAdsPlugin().showAds(params);
+        this.invokeBannerAds();
 
     }
 
     update(deltaTime: number) {
         
     }
+
+    invokeBannerAds()
+{
+             var params = { "adType": "Banner", "adId": "testw6vs28auh3", "pos": "0", "adSize": "BANNER_SIZE_320_50" };
+         sdkhub.getAdsPlugin().showAds(params);                   
+ }
 }
 
